@@ -1,6 +1,6 @@
 const io = require('socket.io-client');
 
-const connectUrl = process.argv[2] === 'PROD' ? 'https://raspberry-web-app-server.herokuapp.com' : 'http://localhost:3000';
+const connectUrl = process.argv[2] === 'PROD' ? 'https://remote-control-iot-server.herokuapp.com/' : 'http://localhost:3000';
 console.log(connectUrl)
 const socket = io.connect(connectUrl, { reconnect: true });
 
