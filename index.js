@@ -1,4 +1,6 @@
 const io = require('socket.io-client');
+const Gpio = require('onoff').Gpio;
+const LED = new Gpio(4, 'out');
 
 const connectUrl = process.argv[2] === 'PROD' ? 'https://remote-control-iot-server.herokuapp.com/' : 'http://localhost:3000';
 console.log(connectUrl)
@@ -11,4 +13,5 @@ socket.on('connect', () => {
 
 socket.on('checkbox state', (state) => {
   console.log('State: ', state);
+  LED.writeSync(parseInt(state, 10));
 });
