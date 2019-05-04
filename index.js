@@ -17,8 +17,6 @@ let maxValue;
 let manualValue;
 
 socket.on('temperatureStateRaspberry', (state) => {
-  console.log(state.mode);
-
   mode = state.mode;
 
   switch (mode) {
