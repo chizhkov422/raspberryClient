@@ -11,7 +11,6 @@ socket.on('connect', () => {
   console.log('Connected!');
 });
 
-socket.on('checkbox state', (state) => {
-  console.log('State: ', state);
+socket.on('temperature', (state) => {
   LED.writeSync(parseInt(state, 10));
 });
