@@ -11,6 +11,6 @@ socket.on('connect', () => {
   console.log('Connected!');
 });
 
-socket.on('temperature', (state) => {
+socket.on('temperatureState', (state) => {
   LED.writeSync(parseInt(state, 10));
 });
