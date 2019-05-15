@@ -32,7 +32,7 @@ socket.on('connect', () => {
 //   }
 // });
 
-TEMPERATURE_SENSOR.read((err, currentValue) => {
+const aaa = TEMPERATURE_SENSOR.read((err, currentValue) => {
   if (err) {
     console.error(err);
     return;
@@ -64,3 +64,5 @@ TEMPERATURE_SENSOR.read((err, currentValue) => {
   socket.emit('temperatureSensorValue', currentValue);
 
 });
+
+console.log('AFTER', aaa)
