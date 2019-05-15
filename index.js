@@ -1,7 +1,7 @@
 const io = require('socket.io-client');
 const Gpio = require('onoff').Gpio;
 // const HEATING_ELEMENT = new Gpio(4, 'out');
-const TEMPERATURE_SENSOR = new Gpio(17, 'in', 'both');
+const TEMPERATURE_SENSOR = new Gpio(17, 'in');
 
 const connectUrl = process.argv[2] === 'PROD' ? 'https://remote-control-iot-server.herokuapp.com/' : 'http://localhost:3000';
 const socket = io.connect(connectUrl, { reconnect: true });
