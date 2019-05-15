@@ -31,14 +31,14 @@ socket.on('connect', () => {
 //     }
 //   }
 // });
-console.log('BEFORE_TEMP', TEMPERATURE_SENSOR);
+
 TEMPERATURE_SENSOR.watch((err, currentValue) => {
   if (err) {
     console.error(err);
     return;
   }
 
-  console.log(currentValue)
+  console.log('CURR_VALUE', currentValue);
 
   // switch (mode) {
   //   case 'auto': {
@@ -64,4 +64,3 @@ TEMPERATURE_SENSOR.watch((err, currentValue) => {
   socket.emit('temperatureSensorValue', currentValue);
 
 });
-console.log('After_TEMP');
