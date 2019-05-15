@@ -32,7 +32,7 @@ socket.on('connect', () => {
 //   }
 // });
 
-TEMPERATURE_SENSOR.watch((err, currentValue) => {
+TEMPERATURE_SENSOR.read((err, currentValue) => {
   if (err) {
     console.error(err);
     return;
